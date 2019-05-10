@@ -6,9 +6,8 @@ int main()
 {
   int i, j, a, numbers[3];
 
-  printf("Enter three numbers\n");
-
   for (i = 0; i < 3; i++) {
+    printf("Enter number: ");
     scanf("%d", &numbers[i]);
   }
 
