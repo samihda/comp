@@ -1,12 +1,14 @@
 #include <stdio.h>
 
+#define LENGTH 3
+
 void sort(int arr[]);
 
 int main()
 {
-  int i, j, a, numbers[3];
+  int i, j, a, numbers[LENGTH];
 
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < LENGTH; i++) {
     printf("Enter number: ");
     scanf("%d", &numbers[i]);
   }
@@ -15,7 +17,7 @@ int main()
 
   printf("Ordered numbers:\n");
 
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < LENGTH; i++) {
     printf("%d\n", numbers[i]);
   }
 
