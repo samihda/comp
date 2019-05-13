@@ -2,7 +2,7 @@
 
 #define LENGTH 3
 
-void sort(int arr[]);
+void bsort(int length, int *arr);
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
     scanf("%d", &numbers[i]);
   }
 
-  sort(numbers);
+  bsort(LENGTH, numbers);
 
   printf("Ordered numbers:\n");
 
@@ -24,7 +24,15 @@ int main()
   return 0;
 }
 
-void sort(int arr[])
+void bsort(int length, int *arr)
 {
-  printf("Sorting...\n");
+  for (int i = 0; i < length; i++) {
+    for (int j = 0; j < length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        int tmp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = tmp;
+      }
+    }
+  }
 }
