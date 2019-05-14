@@ -3,6 +3,7 @@
 #define LENGTH 3
 
 void bsort(int length, int *arr);
+void swap(int *x, int *y);
 
 int main()
 {
@@ -29,10 +30,15 @@ void bsort(int length, int *arr)
   for (int i = 0; i < length; i++) {
     for (int j = 0; j < length - 1; j++) {
       if (arr[j] > arr[j + 1]) {
-        int tmp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = tmp;
+        swap(&arr[j], &arr[j + 1]);
       }
     }
   }
+}
+
+void swap(int *x, int *y)
+{
+  int tmp = *x;
+  *x = *y;
+  *y = tmp;
 }
