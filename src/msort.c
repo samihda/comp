@@ -1,11 +1,11 @@
 void msort(int length, int *xs, int *ys);
 void msortsplit(int *src, int i, int j, int *dst);
 void msortmerge(int *src, int start, int mid, int end, int *dst);
-void copy(int *src, int i, int j, int *dst);
+void copy(int i, int len, int *src, int *dst)
 
 void msort(int length, int *xs, int *ys)
 {
-  copy(xs, 0, length, ys);
+  copy(0, length, xs, ys);
   msortsplit(ys, 0, length, xs);
 }
 
@@ -37,9 +37,9 @@ void msortmerge(int *src, int start, int mid, int end, int *dst)
   }
 }
 
-void copy(int *src, int i, int j, int *dst)
+void copy(int i, int len, int *src, int *dst)
 {
-  for (int k = i; k < j; k++) {
+  for (int k = i; k < len; k++) {
     dst[k] = src[k];
   }
 }
