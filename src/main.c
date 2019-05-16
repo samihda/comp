@@ -3,7 +3,7 @@
 #include <time.h>
 #include "sort.h"
 
-#define LENGTH 20
+#define LENGTH 10
 
 void seedrandom()
 {
