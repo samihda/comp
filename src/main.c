@@ -24,15 +24,20 @@ void printnum(int len, int *list)
   printf("\n");
 }
 
+void gennum(int len, int *list)
+{
+  for (int i = 0; i < len; i++) {
+    list[i] = random50(len);
+  }
+}
+
 int main()
 {
-  int i, numbers[LENGTH], numberscopy[LENGTH];
+  int numbers[LENGTH], numberscopy[LENGTH];
 
   seedrandom();
 
-  for (i = 0; i < LENGTH; i++) {
-    numbers[i] = random50(LENGTH);
-  }
+  gennum(LENGTH, numbers);
 
   printf("Random numbers:\n");
   printnum(LENGTH, numbers);
