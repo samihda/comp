@@ -1,27 +1,27 @@
 void msort(int length, int *list, int *tmp);
-void msortsplit(int *src, int i, int j, int *dst);
-void msortmerge(int *src, int start, int mid, int end, int *dst);
+void msortsplit(int i, int len, int *tmp, int *list);
+void msortmerge(int start, int mid, int end, int *src, int *dst);
 void copy(int len, int *src, int *dst);
 
 void msort(int length, int *list, int *tmp)
 {
   copy(length, list, tmp);
-  msortsplit(tmp, 0, length, list);
+  msortsplit(0, length, tmp, list);
 }
 
-void msortsplit(int *tmp, int i, int len, int *list)
+void msortsplit(int i, int len, int *tmp, int *list)
 {
   if (len - i < 2) {
     return;
   }
 
   int mid = (i + len) / 2;
-  msortsplit(list, i, mid, tmp);
-  msortsplit(list, mid, len, tmp);
-  msortmerge(tmp, i, mid, len, list);
+  msortsplit(i, mid, list, tmp);
+  msortsplit(mid, len, list, tmp);
+  msortmerge(i, mid, len, tmp, list);
 }
 
-void msortmerge(int *src, int start, int mid, int end, int *dst)
+void msortmerge(int start, int mid, int end, int *src, int *dst)
 {
   int i = start;
   int j = mid;
