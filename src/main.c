@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "bsort.c"
-#include "msort.c"
+#include "sort.h"
 
 #define LENGTH 3
 
