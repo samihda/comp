@@ -40,7 +40,6 @@ int main()
   msort(LENGTH, numbers, numberscopy);
 
   printf("Ordered numbers:\n");
-
   printnum(LENGTH, numbers);
 
   return 0;
