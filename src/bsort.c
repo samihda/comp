@@ -1,5 +1,9 @@
-void bsort(int length, int *list);
-void swap(int *x, int *y);
+void swap(int *x, int *y)
+{
+  int tmp = *x;
+  *x = *y;
+  *y = tmp;
+}
 
 void bsort(int length, int *list)
 {
@@ -10,11 +14,4 @@ void bsort(int length, int *list)
       }
     }
   }
-}
-
-void swap(int *x, int *y)
-{
-  int tmp = *x;
-  *x = *y;
-  *y = tmp;
 }
