@@ -26,7 +26,7 @@ void printnum(int len, int *list)
 
 int main()
 {
-  int i, j, a, numbers[LENGTH], numberscopy[LENGTH];
+  int i, numbers[LENGTH], numberscopy[LENGTH];
 
   seedrandom();
 
