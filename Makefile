@@ -1,3 +1,5 @@
+.POSIX:
+
 CC		= c99
 CFLAGS	= -Wall -Wextra
 
