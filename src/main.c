@@ -13,6 +13,7 @@ void seedrandom()
 
 int randommax(int max)
 {
+  // return 1 - max (inclusive)
   return (rand() % max) + 1;
 }
 
