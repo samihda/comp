@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "utils.c"
 #include "sort.h"
 
 #define LENGTH 10

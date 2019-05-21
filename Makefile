@@ -5,8 +5,11 @@ CFLAGS	= -Wall -Wextra -Os
 
 all: main
 
-main: src/main.c
-	$(CC) $(CFLAGS) -o $@ src/main.c
+main: src/main.c obj/util.o
+	$(CC) $(CFLAGS) -o $@ src/main.c obj/util.o
+
+obj/util.o: src/util.c
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
 	rm main
