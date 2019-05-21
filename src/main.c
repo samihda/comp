@@ -4,14 +4,14 @@
 #include "sort.h"
 
 #define LENGTH 10
-#define MAX 50
+#define RANGE 50
 
 void seedrandom()
 {
   srand(time(0));
 }
 
-int randommax(int max)
+int randomint(int max)
 {
   // return 1 - max (inclusive)
   return (rand() % max) + 1;
@@ -29,7 +29,7 @@ void printnum(int len, int *list)
 void gennum(int len, int *list)
 {
   for (int i = 0; i < len; i++) {
-    list[i] = randommax(MAX);
+    list[i] = randomint(RANGE);
   }
 }
 
