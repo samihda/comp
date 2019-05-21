@@ -4,15 +4,16 @@
 #include "sort.h"
 
 #define LENGTH 10
+#define MAX 50
 
 void seedrandom()
 {
   srand(time(0));
 }
 
-int random50()
+int randommax(int max)
 {
-  return rand() % 50;
+  return (rand() % max) + 1;
 }
 
 void printnum(int len, int *list)
@@ -27,7 +28,7 @@ void printnum(int len, int *list)
 void gennum(int len, int *list)
 {
   for (int i = 0; i < len; i++) {
-    list[i] = random50();
+    list[i] = randommax(MAX);
   }
 }
 
