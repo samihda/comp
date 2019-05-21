@@ -1,21 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "utils.c"
 #include "sort.h"
 
 #define LENGTH 10
 #define RANGE 50
-
-void seedrandom()
-{
-  srand(time(0));
-}
-
-int randomint(int max)
-{
-  // return 1 - max (inclusive)
-  return (rand() % max) + 1;
-}
 
 void printnum(int len, int *list)
 {
