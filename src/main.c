@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "sort.h"
+#include "util.h"
 
 #define LENGTH 10
 #define RANGE 50
