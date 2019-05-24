@@ -15,17 +15,17 @@ void copy(int len, int *src, int *dst)
 int partition(int lo, int hi, int *list)
 {
   int pivot = list[hi];
-  int i = lo;
+  int mid = lo;
 
   for (int j = lo; j < hi; j++) {
     if (list[j] < pivot) {
-      swap(&list[i], &list[j]);
-      i++;
+      swap(&list[mid], &list[j]);
+      mid++;
     }
   }
 
-  swap(&list[i], &list[hi]);
-  return i;
+  swap(&list[mid], &list[hi]);
+  return mid;
 }
 
 void bsort(int length, int *list)
@@ -76,8 +76,8 @@ void msort(int length, int *list, int *tmp)
 void qsort(int lo, int hi, int *list)
 {
   if (lo < hi) {
-    int p = partition(lo, hi, list);
-    qsort(lo, p - 1, list);
-    qsort(p + 1, hi, list);
+    int mid = partition(lo, hi, list);
+    qsort(lo, mid - 1, list);
+    qsort(mid + 1, hi, list);
   }
 }
