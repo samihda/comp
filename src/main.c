@@ -17,7 +17,7 @@ void printnum(int len, int *list)
 void gennum(int len, int *list)
 {
   for (int i = 0; i < len; i++) {
-    list[i] = randomint(RANGE);
+    list[i] = randomint(RANGE + 1);
   }
 }
 

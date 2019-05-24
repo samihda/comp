@@ -8,6 +8,6 @@ void seedrandom()
 
 int randomint(int max)
 {
-  // return 1 - max (inclusive)
-  return (rand() % max) + 1;
+  // return inclusive 0..(max - 1)
+  return rand() % max;
 }
