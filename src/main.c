@@ -23,7 +23,7 @@ void gennum(int len, int *list)
 
 int main()
 {
-  int numbers[LENGTH], numberscopy[LENGTH];
+  int numbers[LENGTH];
 
   seedrandom();
 
@@ -32,7 +32,7 @@ int main()
   printf("Random numbers:\n");
   printnum(LENGTH, numbers);
 
-  msort(LENGTH, numbers, numberscopy);
+  qsort(0, LENGTH - 1, numbers);
 
   printf("Ordered numbers:\n");
   printnum(LENGTH, numbers);
