@@ -14,18 +14,27 @@ void copy(int len, int *src, int *dst)
 
 int partition(int lo, int hi, int *list)
 {
-  int pivot = list[hi];
-  int mid = lo;
+  int pivot = list[lo + (hi - lo) / 2];
+  int i = lo - 1;
+  int j = hi + 1;
 
-  for (int j = lo; j < hi; j++) {
-    if (list[j] < pivot) {
-      swap(&list[mid], &list[j]);
-      mid++;
+  while (1) {
+    do {
+      i++;
+    } while (list[i] < pivot);
+
+    do {
+      j--;
+    } while (list[j] > pivot);
+
+    if (i >= j) {
+      return j;
     }
+
+    swap(&list[i], &list[j]);
   }
 
-  swap(&list[mid], &list[hi]);
-  return mid;
+  return j;
 }
 
 void bsort(int length, int *list)
@@ -77,7 +86,7 @@ void qsort(int lo, int hi, int *list)
 {
   if (lo < hi) {
     int mid = partition(lo, hi, list);
-    qsort(lo, mid - 1, list);
+    qsort(lo, mid, list);
     qsort(mid + 1, hi, list);
   }
 }
