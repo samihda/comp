@@ -12,6 +12,17 @@ void gennum(int len, int *list)
   }
 }
 
+int search(int n, int len, int *list)
+{
+  for (int i = 0; i < len; i++) {
+    if (n == list[i]) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
 int main()
 {
   int numbers[LENGTH];
@@ -27,6 +38,9 @@ int main()
 
   printf("Ordered numbers:\n");
   printnum(LENGTH, numbers);
+
+  int needle = numbers[randomint(LENGTH)];
+  printf("Index of %d: %d\n", needle, search(needle, LENGTH, numbers));
 
   return 0;
 }
