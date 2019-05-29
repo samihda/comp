@@ -29,3 +29,16 @@ int bsearch(int n, int len, int *list)
 
   return -1;
 }
+
+int bsearch_(int n, int len, int *list)
+{
+  int k = 0;
+
+  for (int b = len / 2; b >= 1; b /= 2) {
+    while (k + b < len && list[k + b] <= n) {
+      k += b;
+    }
+  }
+
+  return list[k] == n ? k : -1;
+}
