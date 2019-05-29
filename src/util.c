@@ -9,7 +9,7 @@ void seedrandom()
 
 int randomint(int max)
 {
-  // return inclusive 0..(max - 1)
+  /* return inclusive 0..(max - 1) */
   return rand() % max;
 }
 
