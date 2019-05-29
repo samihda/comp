@@ -5,7 +5,7 @@ CFLAGS	= -Wall -Wextra -Os
 
 all: main
 
-main: src/main.c obj/sort.o obj/util.o
+main: src/main.c obj/sort.o obj/search.o obj/util.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 obj/%.o: src/%.c

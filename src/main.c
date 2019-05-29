@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "sort.h"
+#include "search.h"
 #include "util.h"
 
 #define LENGTH 10
@@ -10,17 +11,6 @@ void gennum(int len, int *list)
   for (int i = 0; i < len; i++) {
     list[i] = randomint(RANGE + 1);
   }
-}
-
-int search(int n, int len, int *list)
-{
-  for (int i = 0; i < len; i++) {
-    if (n == list[i]) {
-      return i;
-    }
-  }
-
-  return -1;
 }
 
 int main()
