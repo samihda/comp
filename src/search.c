@@ -32,13 +32,13 @@ int bsearch(int n, int len, int *list)
 
 int bsearch_(int n, int len, int *list)
 {
-  int k = 0;
+  int i = 0;
 
-  for (int b = len / 2; b >= 1; b /= 2) {
-    while (k + b < len && list[k + b] <= n) {
-      k += b;
+  for (int jump = len / 2; jump >= 1; jump /= 2) {
+    while (i + jump < len && list[i + jump] <= n) {
+      i += jump;
     }
   }
 
-  return list[k] == n ? k : -1;
+  return list[i] == n ? i : -1;
 }
