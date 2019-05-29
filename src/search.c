@@ -11,6 +11,13 @@ int search(int n, int len, int *list)
 
 int bsearch(int n, int len, int *list)
 {
+  /**
+   * Check the middle element
+   * Return index if found
+   * Otherwise repeat on first or second half of array accordingly
+   * May return any index of the element in case of duplicates
+   */
+
   int lo = 0, hi = len - 1;
 
   while (lo <= hi) {
@@ -32,6 +39,14 @@ int bsearch(int n, int len, int *list)
 
 int bsearch_(int n, int len, int *list)
 {
+  /**
+   * Jump from the start to the middle point
+   * while keep halving the jump distance
+   * Jump shorter if the middle element is found or still too small
+   * Otherwise continue jumping from middle point instead
+   * Return rightmost index of the element in case of duplicates
+   */
+
   int i = 0;
 
   for (int jump = len / 2; jump >= 1; jump /= 2) {
