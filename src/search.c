@@ -11,19 +11,19 @@ int search(int n, int len, int *list)
 
 int bsearch(int n, int len, int *list)
 {
-  int i = 0, j = len - 1;
+  int lo = 0, hi = len - 1;
 
-  while (i <= j) {
-    int k = (i + j) / 2;
+  while (lo <= hi) {
+    int mid = (lo + hi) / 2;
 
-    if (list[k] == n) {
-      return k;
+    if (list[mid] == n) {
+      return mid;
     }
 
-    if (list[k] > n) {
-      j = k - 1;
+    if (list[mid] > n) {
+      hi = mid - 1;
     } else {
-      i = k + 1;
+      lo = mid + 1;
     }
   }
 
