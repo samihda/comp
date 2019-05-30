@@ -30,7 +30,7 @@ int main()
   printnum(LENGTH, numbers);
 
   int needle = numbers[randomint(LENGTH)];
-  printf("Index of %d: %d\n", needle, bsearch_(needle, LENGTH, numbers));
+  printf("Index of %d: %d\n", needle, bsearch_first(needle, LENGTH, numbers));
 
   return 0;
 }

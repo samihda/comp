@@ -37,7 +37,7 @@ int bsearch(int n, int len, int *list)
   return -1;
 }
 
-int bsearch_(int n, int len, int *list)
+int bsearch_last(int n, int len, int *list)
 {
   /**
    * Jump from the start to the middle point
@@ -56,4 +56,29 @@ int bsearch_(int n, int len, int *list)
   }
 
   return list[i] == n ? i : -1;
+}
+
+int bsearch_first(int n, int len, int *list)
+{
+  /**
+   * Define the start and end indexes
+   * Increment the start index if target is smaller than the middle point
+   * Otherwise set the middle point as the end index
+   * Repeat until start and end indexes meet and return the start index
+   * Return leftmost index of the element in case of duplicates
+   */
+
+  int l = 0, r = len;
+
+  while (l < r) {
+    int m = (l + r) / 2;
+
+    if (list[m] < n) {
+      l = m + 1;
+    } else {
+      r = m;
+    }
+  }
+
+  return list[l] == n ? l : -1;
 }
