@@ -1,6 +1,6 @@
 .POSIX:
 
-CC		= c99
+CC	= c99
 CFLAGS	= -Wall -Wextra -Os
 
 all: main
